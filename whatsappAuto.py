@@ -9,7 +9,7 @@ def send_message():
     message = client.messages.create( 
                                   from_='whatsapp:+14155238886',  
                                   body='Good Morning!',      
-                                  to='whatsapp:+905418396126' 
+                                  to='whatsapp:+79818061358' 
                               ) 
      
     print(message.sid)
