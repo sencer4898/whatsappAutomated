@@ -1,9 +1,8 @@
 from twilio.rest import Client 
 import config
-from boto.s3.connection import S3Connection
-import os
 
-s3 = S3Connection(os.environ[account_sid], os.environ[auth_token])
+account_sid = YOUR_ACCOUNT_SID
+auth_token = YOUR_ACCOUNT_TOKEN
  
 client = Client(account_sid, auth_token) 
 
@@ -11,8 +10,8 @@ client = Client(account_sid, auth_token)
 def send_message():
     message = client.messages.create( 
                                   from_='whatsapp:+14155238886',  
-                                  body='Good Morning!',      
-                                  to='whatsapp:+905418396126' 
+                                  body='Good Morning!', #Message you want to send     
+                                  to='whatsapp:+905418396126' #Person you want to message
                               ) 
      
     print(message.sid)
