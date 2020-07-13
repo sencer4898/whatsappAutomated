@@ -1,8 +1,10 @@
 from twilio.rest import Client 
 import config
+from boto.s3.connection import S3Connection
+import os
+
+s3 = S3Connection(os.environ[account_sid], os.environ[auth_token])
  
-account_sid = config.account_sid 
-auth_token = config.auth_token
 client = Client(account_sid, auth_token) 
 
 
